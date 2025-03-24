@@ -1,19 +1,19 @@
 {
-  "name": "nunya-atx",
-  "author": "Martin Amps <m@rtin.so>",
-  "type": "module",
-  "version": "0.0.1",
-  "private": true,
-  "scripts": {
-    "dev": "astro dev",
-    "build": "astro build",
-    "preview": "astro preview",
-    "astro": "astro"
-  },
-  "dependencies": {
-    "@astrojs/cloudflare": "^12.3.0",
-    "@fontsource/bebas-neue": "^5.0.8",
-    "astro": "^5.2.5",
-    "esbuild": "0.17.19"
-  }
+	"name": "nunya-atx",
+	"author": "Martin Amps <m@rtin.so>",
+	"type": "module",
+	"version": "0.0.1",
+	"private": true,
+	"scripts": {
+		"dev": "astro dev",
+		"build": "astro build",
+		"preview": "astro preview",
+		"astro": "astro"
+	},
+	"dependencies": {
+		"@astrojs/cloudflare": "^12.3.0",
+		"@fontsource/bebas-neue": "^5.0.8",
+		"astro": "^5.5.4",
+		"esbuild": "^0.25.1"
+	}
 }
