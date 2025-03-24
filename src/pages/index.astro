@@ -1,0 +1,224 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout>
+  <main>
+    <div class="logo">
+      <img src="/logo.png" alt="Nunya Bar - Austin's Neighborhood Sports Bar Logo" width="400" height="auto" />
+    </div>
+
+    <div class="content-container">
+      <div class="accent-top"></div>
+      <div class="content">
+        <section class="hours">
+          <h2>Hours</h2>
+          <div class="hours-grid">
+            <div class="day-group">
+              <h3>Tuesday - Thursday</h3>
+              <p>4:00 PM - 1:00 AM</p>
+            </div>
+            <div class="day-group">
+              <h3>Friday - Sunday</h3>
+              <p>10:00 AM - 2:00 AM</p>
+            </div>
+            <div class="day-group">
+              <h3>Monday</h3>
+              <p>Closed</p>
+            </div>
+          </div>
+          <div class="age-restriction">21+ ONLY</div>
+        </section>
+
+        <section class="location">
+          <h2>Find Us</h2>
+          <address>1806 E 12th St, Austin, TX 78702</address>
+          <div class="map">
+            <iframe 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3445.884914493244!2d-97.72463792427656!3d30.27392997490663!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8644b5c4e45c9bd9%3A0x7f063545f9b6ea49!2s1806%20E%2012th%20St%2C%20Austin%2C%20TX%2078702!5e0!3m2!1sen!2sus!4v1709247027953!5m2!1sen!2sus" 
+              width="100%" 
+              height="450" 
+              style="border:0;" 
+              allowfullscreen="" 
+              loading="lazy" 
+              referrerpolicy="no-referrer-when-downgrade"
+              aria-label="Google Maps location of Neighborhood Bar">
+            </iframe>
+          </div>
+        </section>
+      </div>
+      <div class="accent-bottom"></div>
+      <div class="border-left"></div>
+      <div class="border-right"></div>
+    </div>
+  </main>
+</Layout>
+
+<style>
+  /* Base layout */
+  main {
+    min-height: 100vh;
+    background-color: var(--accent);
+    padding: 2rem 1rem 4rem;
+  }
+
+  .logo {
+    text-align: center;
+    padding: 1rem 0 3rem;
+  }
+
+  .logo img {
+    max-width: 400px;
+    width: 100%;
+    height: auto;
+  }
+
+  /* Content wrapper with border and accents */
+  .content-container {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+  }
+
+  /* Custom accent bars */
+  .accent-top {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 15px;
+    background-color: var(--text-accent);
+    transform: skewY(-0.5deg);
+    transform-origin: top left;
+    z-index: 1;
+  }
+
+  .accent-bottom {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 15px;
+    background-color: var(--text-accent);
+    transform: skewY(0.5deg);
+    transform-origin: bottom right;
+    z-index: 1;
+  }
+  
+  /* Separate border elements to ensure perfect connection */
+  .border-left {
+    position: absolute;
+    top: 14px;
+    /* Height adjusted to ensure it doesn't extend past the angled bottom accent */
+    height: calc(100% - 30px);
+    left: 0;
+    width: 1px;
+    background-color: var(--text-accent);
+  }
+  
+  .border-right {
+    position: absolute;
+    top: 6px; /* Adjusted up by 5px to better connect at the top */
+    /* Extended to ensure it meets the bottom accent */
+    height: calc(100% - 19px); /* Also adjusted to maintain the same endpoint */
+    right: 0;
+    width: 1px;
+    background-color: var(--text-accent);
+  }
+  
+  /* Content area */
+  .content {
+    padding: 2rem;
+    width: 100%;
+    box-sizing: border-box;
+    position: relative;
+  }
+
+  /* Typography */
+  section {
+    margin-bottom: 3rem;
+  }
+
+  h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    color: var(--text-accent);
+    text-align: center;
+    letter-spacing: 1px;
+  }
+
+  .hours-grid {
+    display: grid;
+    gap: 2rem;
+    margin: 1.5rem 0;
+  }
+
+  .day-group {
+    text-align: center;
+  }
+
+  h3 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.5rem;
+    margin: 0;
+    color: var(--text-accent);
+    letter-spacing: 1px;
+  }
+
+  p {
+    font-size: 1.2rem;
+    margin: 0.5rem 0;
+  }
+
+  .age-restriction {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2rem;
+    margin-top: 2rem;
+    color: var(--text-accent);
+    text-align: center;
+    border: 1px solid var(--text-accent);
+    padding: 1rem;
+    border-radius: 4px;
+    letter-spacing: 1px;
+  }
+
+  address {
+    font-size: 1.2rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    font-style: normal;
+  }
+
+  .map {
+    margin-top: 1rem;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  }
+
+  /* Responsive styles */
+  @media (min-width: 768px) {
+    .hours-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  @media (max-width: 768px) {
+    main {
+      padding: 1rem 0.5rem 3rem;
+    }
+
+    .content {
+      padding: 1.5rem;
+    }
+
+    .hours-grid {
+      gap: 1.5rem;
+    }
+
+    .logo img {
+      max-width: 300px;
+    }
+  }
+</style>

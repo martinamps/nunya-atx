@@ -1,0 +1,67 @@
+---
+import '@fontsource/bebas-neue';
+
+interface Props {
+  title?: string;
+}
+
+const { title = "Nunya - Austin's Premier Neighborhood Sports Bar" } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    
+    <!-- SEO Meta Tags -->
+    <title>{title}</title>
+    <meta name="description" content="Nunya - Austin's favorite neighborhood sports bar on East 12th. Cold drinks, great food, live sports, and a welcoming atmosphere. Open late, closed Mondays." />
+    <meta name="keywords" content="Nunya bar, neighborhood bar austin, east austin sports bar, 12th street bar, local sports bar, austin tx, cold beer, game viewing, happy hour, east austin" />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://nunyaatx.com/" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content="Your neighborhood sports bar on East 12th. Cold drinks, great atmosphere, and all the big games in Austin, TX." />
+    <meta property="og:image" content="https://nunyaatx.com/social.png" />
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://nunyaatx.com/" />
+    <meta property="twitter:title" content={title} />
+    <meta property="twitter:description" content="Your neighborhood sports bar on East 12th. Cold drinks, great atmosphere, and all the big games in Austin, TX." />
+    <meta property="twitter:image" content="https://nunyaatx.com/social.png" />
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://nunyaatx.com/" />
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>
+
+<style is:global>
+  :root {
+    --accent: #9c4035;
+    --accent-light: #f8df73;
+    --background: #1A1A1A;
+    --text-main: #ffffff;
+    --text-accent: #f8df73;
+  }
+  
+  html {
+    font-family: sans-serif;
+    background: var(--background);
+    background-size: 224px;
+  }
+  
+  body {
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    color: var(--text-main);
+  }
+</style>

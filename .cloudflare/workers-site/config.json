@@ -1,0 +1,9 @@
+{
+	"name": "neighborhood-bar",
+	"build": {
+		"command": "bun run build",
+		"upload": {
+			"format": "service-worker"
+		}
+	}
+}
