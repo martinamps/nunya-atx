@@ -4,6 +4,10 @@
 	"type": "module",
 	"version": "0.0.1",
 	"private": true,
+	"engines": {
+		"node": ">=18.17.1",
+		"npm": ">=9.6.7"
+	},
 	"scripts": {
 		"dev": "astro dev",
 		"build": "astro build",
@@ -13,7 +17,10 @@
 	"dependencies": {
 		"@astrojs/cloudflare": "^12.3.0",
 		"@fontsource/bebas-neue": "^5.0.8",
-		"astro": "^5.5.4",
+		"astro": "^5.2.5",
 		"esbuild": "^0.25.1"
+	},
+	"overrides": {
+		"yocto-spinner": "0.2.0"
 	}
 }
