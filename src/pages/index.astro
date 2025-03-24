@@ -15,16 +15,12 @@ import Layout from '../layouts/Layout.astro';
           <h2>Hours</h2>
           <div class="hours-grid">
             <div class="day-group">
-              <h3>Tuesday - Thursday</h3>
-              <p>4:00 PM - 1:00 AM</p>
+              <h3>Monday - Friday</h3>
+              <p>4:00 PM - 2:00 AM</p>
             </div>
             <div class="day-group">
-              <h3>Friday - Sunday</h3>
-              <p>10:00 AM - 2:00 AM</p>
-            </div>
-            <div class="day-group">
-              <h3>Monday</h3>
-              <p>Closed</p>
+              <h3>Saturday - Sunday</h3>
+              <p>12:00 PM - 2:00 AM</p>
             </div>
           </div>
           <div class="age-restriction">21+ ONLY</div>
@@ -150,8 +146,11 @@ import Layout from '../layouts/Layout.astro';
 
   .hours-grid {
     display: grid;
+    grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
-    margin: 1.5rem 0;
+    margin: 1.5rem auto;
+    width: 80%;
+    max-width: 500px;
   }
 
   .day-group {
@@ -200,7 +199,7 @@ import Layout from '../layouts/Layout.astro';
   /* Responsive styles */
   @media (min-width: 768px) {
     .hours-grid {
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(2, 1fr);
     }
   }
 
@@ -214,7 +213,9 @@ import Layout from '../layouts/Layout.astro';
     }
 
     .hours-grid {
+      grid-template-columns: 1fr;
       gap: 1.5rem;
+      width: 100%;
     }
 
     .logo img {
