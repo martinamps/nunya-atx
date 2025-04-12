@@ -1,0 +1,141 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Menu - Nunya Bar Austin">
+  <main>
+    <div class="content-container">
+      <div class="accent-top"></div>
+      <div class="content">
+        <section class="menu">
+          <h2>Our Menu</h2>
+          <div class="menu-image-container">
+            <img 
+              src="/menu.png" 
+              alt="Nunya Bar Food and Drink Menu" 
+              width="100%" 
+              height="auto" 
+              loading="lazy"
+            />
+          </div>
+        </section>
+      </div>
+      <div class="accent-bottom"></div>
+      <div class="border-left"></div>
+      <div class="border-right"></div>
+    </div>
+  </main>
+</Layout>
+
+<style>
+  /* Base layout */
+  main {
+    min-height: 100vh;
+    padding: 0 1rem 4rem;
+  }
+
+  /* Content wrapper with border and accents */
+  .content-container {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+    border-radius: 4px;
+    overflow: hidden;
+  }
+
+  /* Custom accent bars */
+  .accent-top {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 15px;
+    background-color: var(--text-accent);
+    transform: skewY(-0.5deg);
+    transform-origin: top left;
+    z-index: 1;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+  }
+
+  .accent-bottom {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 15px;
+    background-color: var(--text-accent);
+    transform: skewY(0.5deg);
+    transform-origin: bottom right;
+    z-index: 1;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+  }
+  
+  /* Separate border elements to ensure perfect connection */
+  .border-left {
+    position: absolute;
+    top: 14px;
+    height: calc(100% - 30px);
+    left: 0;
+    width: 1px;
+    background-color: var(--text-accent);
+  }
+  
+  .border-right {
+    position: absolute;
+    top: 6px;
+    height: calc(100% - 19px);
+    right: 0;
+    width: 1px;
+    background-color: var(--text-accent);
+  }
+  
+  /* Content area */
+  .content {
+    padding: 2rem;
+    width: 100%;
+    box-sizing: border-box;
+    position: relative;
+  }
+
+  /* Typography */
+  section {
+    margin-bottom: 3rem;
+  }
+
+  h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    color: var(--text-accent);
+    text-align: center;
+    letter-spacing: 1px;
+  }
+
+  /* Menu styles */
+  .menu-image-container {
+    margin: 0 auto;
+    max-width: 100%;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  }
+
+  .menu-image-container img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  /* Responsive styles */
+  @media (max-width: 768px) {
+    main {
+      padding: 0 0.5rem 3rem;
+    }
+
+    .content {
+      padding: 1.5rem;
+    }
+  }
+</style> 

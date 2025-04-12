@@ -39,6 +39,17 @@ const { title = "Nunya - Austin's Premier Neighborhood Sports Bar" } = Astro.pro
     <link rel="canonical" href="https://nunyaatx.com/" />
   </head>
   <body>
+    <div class="logo">
+      <img src="/logo.png" alt="Nunya Bar - Austin's Neighborhood Sports Bar Logo" width="400" height="auto" />
+    </div>
+
+    <nav class="nav-container">
+      <div class="nav-links">
+        <a href="/">HOME</a>
+        <a href="/menu">MENU</a>
+      </div>
+    </nav>
+    
     <slot />
   </body>
 </html>
@@ -63,5 +74,72 @@ const { title = "Nunya - Austin's Premier Neighborhood Sports Bar" } = Astro.pro
     padding: 0;
     line-height: 1.6;
     color: var(--text-main);
+    background-color: var(--accent);
+  }
+
+  /* Logo styles */
+  .logo {
+    text-align: center;
+    padding: 1.5rem 0 1rem;
+  }
+
+  .logo img {
+    max-width: 400px;
+    width: 100%;
+    height: auto;
+  }
+
+  /* Navigation styles */
+  .nav-container {
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+
+  .nav-links {
+    display: inline-flex;
+    gap: 3rem;
+    padding: 1rem;
+    background-color: var(--accent);
+  }
+
+  .nav-links a {
+    font-family: 'Bebas Neue', sans-serif;
+    color: var(--text-accent);
+    text-decoration: none;
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+    position: relative;
+    transition: transform 0.2s ease;
+  }
+
+  .nav-links a:hover {
+    transform: translateY(-2px);
+  }
+
+  .nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: -4px;
+    left: 0;
+    background-color: var(--text-accent);
+    transform: scaleX(0);
+    transition: transform 0.2s ease;
+  }
+
+  .nav-links a:hover::after {
+    transform: scaleX(1);
+  }
+
+  /* Responsive styles for navigation */
+  @media (max-width: 768px) {
+    .logo img {
+      max-width: 300px;
+    }
+    
+    .nav-links {
+      gap: 2rem;
+    }
   }
 </style>
